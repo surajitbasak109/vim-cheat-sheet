@@ -16,7 +16,7 @@ Vim Cheat Sheet {.text-center}
 -   [Exiting](#Exiting)
 -   [Search and replace](#Search-and-replace)
 
-Globals {#Globals}
+Globals {:#Globals}
 -------
 
 **:help keyword**: open help for keyword
@@ -27,7 +27,7 @@ Globals {#Globals}
 
 **:close**: close current pane
 
-Cursor Movements {#Cursor-Movements}
+Cursor Movements {:#Cursor-Movements}
 ----------------
 
 **0**: jump to the start of the line
