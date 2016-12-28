@@ -1,0 +1,324 @@
+Vim Cheat Sheet {.text-center}
+===============
+
+-   [Globals](#Globals)
+-   [cursor Movements](#Cursor-Movements)
+-   [Insert Mode](#Insert-Mode)
+-   [Working with multiple files](#Working-with-multiple-files)
+-   [Editing](#Editing)
+-   [Marking text: visual mode](#Marking-text-visual-mode)
+-   [Visual Commands](#Visual-Commands)
+-   [Registers](#Registers)
+-   [Marks](#Marks)
+-   [Macros](#Macros)
+-   [Tabs](#Tabs)
+-   [Cut and Paste](#Cut-and-Paste)
+-   [Exiting](#Exiting)
+-   [Search and replace](#Search-and-replace)
+
+Globals {#Globals}
+-------
+
+**:help keyword**: open help for keyword
+
+**:o file**: open file
+
+**:saveas file**: save file as
+
+**:close**: close current pane
+
+Cursor Movements {#Cursor-Movements}
+----------------
+
+**0**: jump to the start of the line
+
+**h**: move cursor left
+
+**j**: move cursor down
+
+**k**: move cursor up
+
+**l**: move cursor right
+
+**H**: move to top fo screen
+
+**M**: move to middle of screen
+
+**L**: move to bottom of screen
+
+**w**: jump forwards to the start of a word
+
+**W**: jump forwards to the start of a word (words can contain
+punctuation)
+
+**e**: jump forwards to the end of a word
+
+**E**: jump forwards to the end of a word (words can contain
+punctuation)
+
+**b**: jump backwards to the start of a word
+
+**B**: jump backwards to the start of a word (words can contain
+punctuation)
+
+**\^**: jump to the first no-blank character of the line
+
+**\$**: jump to the end of the line
+
+**g\_**: jump to the last non-blank character of the line
+
+**gg**: go to the first line of the document
+
+**G**: go to the last line of the document
+
+**5G**: go to line 5
+
+**fx**: jump to next occurrence of character x
+
+**tx**: jump to before next occurrence of x
+
+**}**: jump to next paragraph (or function/block, when editing code)
+
+**{**: jump to previous paragraph (or function/block, when editing code)
+
+**ctrl + b**: move back one full screen
+
+**ctrl + f**: move forward one full screen
+
+**ctrl + d**: move forward 1/2 a screen
+
+**ctrl + u**: move back 1/2 a screen
+
+**tips**: Prefix a cursor movement command with a number to repeat it.
+For example, 4j moves down 4 lines
+
+Insert Mode {#Insert-Mode}
+-----------
+
+**i**: insert before the cursor
+
+**I**: inset a the beginning of the line
+
+**a**: insert (append) after the cursor
+
+**A**: insert (append) at the end of the line
+
+**o**: append (open) a new line below the current line
+
+**O**: append (open) a new line above the current line
+
+**ea**: insert (append) at the end of the word
+
+**Esc**: exit insert mode
+
+Working with multiple files {#Working-with-multiple-files}
+---------------------------
+
+**:e file**: edit a file in a new buffer
+
+**:bnext or :btn**: go to the previous buffer
+
+**:bprev or :bp**: go to the previous buffer
+
+**:bd**: delete a buffer (close a file)
+
+**:ls**: list all open buffers
+
+**:sp file**: open a file in a new buffer and split window
+
+**:vsp file**: open a file in a new buffer and vertically split window
+
+**ctrl + ws**: split window
+
+**ctrl + ww**: switch windows
+
+**ctrl + wq**: quit a window
+
+**ctrl + wv**: split window vertically
+
+**ctrl + wh**: move cursor to the left window (vertical split)
+
+**ctrl + wl**: move cursor to the right window (vertical split)
+
+**ctrl + wj**: move cursor to the window below (horizontal split)
+
+**ctrl +wk**: move cursor to the window above (horizontal split
+
+Editing {#Editing}
+-------
+
+**r**: replace a single character
+
+**j**: join line below to the current one
+
+**cc**: change (replace) entire line
+
+**cw**: change (replace) to the end of the word
+
+**c\$**: change (replace) to the end of the line
+
+**s**: delete character and substitute text
+
+**S**: delete line and substitute text (same as cc)
+
+**xp**: transpose two letters (delete and paste)
+
+**u**: undo
+
+**ctrl + r**: redo
+
+**.**: repeat last command
+
+Marking text: visual mode {#Marking-text-visual-mode}
+-------------------------
+
+**v**: start visual mode, mark lines, then do a command (like y-yank)
+
+**V**: start linewise visual mode
+
+**o**: move to other end of marked area
+
+**ctrl + v**: start visual block mode
+
+**O**: move to other corner of block
+
+**aw**: mark a word
+
+**ab**: a block with ()
+
+**aB**: a block with {}
+
+**ib**: inner block with ()
+
+**iB**: inner block with {}
+
+**Esc**: exit visual mode
+
+Visual Commands {#Visual-Commands}
+---------------
+
+**\>**: shift text right
+
+**\<**: shift text left
+
+**y**: yank (copy) marked text
+
+**d**: delete marked text
+
+**\~**: switch case
+
+Registers {#Registers}
+---------
+
+**reg**: show registers content
+
+**xy**: yank into register x
+
+**0p**: paste contents of register x
+
+**tips**: Registers are being stored n \~/.viminfo, and will be loaded
+again on next restart of vim.,Register 0 contains always the value of
+the last yank command.
+
+Marks {#Marks}
+-----
+
+**:marks**: list of marks
+
+**ma**: set current position for mark A
+
+**\`a**: jump to position of mark A
+
+**y\`a**: yank text to position of mark A
+
+Macros {#Macros}
+------
+
+**qa**: record macro a
+
+**qq**: stop recording macro
+
+**@@**: returns last run macro
+
+Tabs {#Tabs}
+----
+
+**:tabnew**: open a file in a new tab
+
+**:tabnew file**: open a file in a new tab
+
+**ctrl + wT**: move the current split window into its own tab
+
+**gt or :tabnext or :tabn**: move to the next tab
+
+**gT or :tabprev or :tabp**: move to the previous tab
+
+**\#gt**: move to tab number \#
+
+**:tabmove \#**: move current tab to the \#th position
+
+**:tabclose or :tabc**: close the current tab and all its windows
+
+**:tabonly or :tabo**: close all tabs except for the current one
+
+**:tabdo**: command- run the command on all tabs (e.g. : tabdo q- closes
+all opened tabs (e.g. :tabdo q- closes all opened tabs)
+
+Cut and Paste {#Cut-and-Paste}
+-------------
+
+**yy**: yank (copy) a line
+
+**(\#num)yy**: yank (copy) \#num lines (e.g. 2yy copies 2 lines
+
+**yw**: yank (copy) the characters of the word from the cursor position
+to the start of the next word
+
+**y\$**: yank (copy) to end of line
+
+**p**: put (paste) to end of line
+
+**P**: put (paste) before cursor
+
+**dd**: delete (cut) a line
+
+**2dd**: delete (cut) the character of the word from the cursor position
+to the start of the next word
+
+**D**: delete (cut) to the end of the line
+
+**d\$**: delete (cut) to the end of the line
+
+**x**: delete (cut) character
+
+Exiting {#Exiting}
+-------
+
+**:w**: write (save) the file, but don't exit
+
+**:w !sudo tee %**: write out the current file using sudo
+
+**:wq or :x or ZZ**: write (save) and quit
+
+**:q**: quit (fails if there are unsaved changes)
+
+**:q! or ZQ**: quit and throw away unsaved changes
+
+Search and replace {#Search-and-replace}
+------------------
+
+**/pattern**: search for pattern
+
+**?pattern**: search backward for pattern
+
+**\\vpattern**: 'very matic' pattern: non-alphanumeric characters are
+interpreted as special regex symobs (no escapting needd)
+
+**n**: repeat search in sme direction
+
+**N**: repeat search in opposite direction
+
+**:%s/old/new/gc**: replace all old with new throughout file with
+confirmations
+
+**:noh**: remove highlighting of search matches

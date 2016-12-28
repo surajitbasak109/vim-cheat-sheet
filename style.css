@@ -1,0 +1,77 @@
+body {
+	font-family: 'Lucida Grande', Ubuntu, Arial, sans-serif;
+	line-height: 1.1;
+	background: #ededed;
+	color: #333;
+}
+
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.data-table {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.data-table>li {
+	display: inline-block;
+}
+
+.data-table li a {
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    margin: 4px;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+
+.data-table li a.active {
+    background: #0095dd;
+    color: #fff;
+    border: 1px solid #0095dd;
+}
+
+.data {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 4px 10px;
+}
+
+.data pre {
+    display: inline-block;
+    margin: 0;
+    background: #eee;
+    padding: 3px;
+    font-size: 1.2em;
+}
+
+.hidden {
+    display: none;
+}
+
+.data h2 {
+    background: #0c7280;
+    color: #fff;
+    padding: 4px;
+    margin: -4px -10px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+
+#root {
+    max-width: 920px;
+    margin: 0 auto;
+}
